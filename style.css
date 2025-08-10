@@ -1,0 +1,142 @@
+/* 
+Color pallete. This section defines variables for the color pallete,
+so that we can refer to particular colors by name instead of hexadecimal values.
+This is applied to the 'root' psuedo-element, which just means that these color
+variables are available to be used anywhere in our html document
+*/
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    /* add in other color variables for color palette */
+}
+
+/* The body of the document has a white background and is set up as a vertical flexbox. */
+body {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Defines the main container size, we are limiting to 72em max */
+.main-container {
+    max-width: 72em;
+    font-family: Inter;
+    /* TODO: set the main font color */
+}
+
+/* Here we define the aspects of style of our elements other than their grid layout */
+.banner {
+    /* TODO: banner styling */
+}
+
+.banner-title {
+    /* TODO: banner main title font styling */
+}
+
+.banner-subtitle {
+    /* TODO: banner subtitle font styling */
+}
+
+.team-member-card {
+    /* TODO: style the card as a column based flexbox with rounded corners */
+}
+
+/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
+.team-member-card-image {
+    width: 100%;
+}
+
+.team-member-card-blurb {
+    /* TODO: style the blurb with padding */
+}
+
+.our-clients-title {
+    /* TODO: style the 'Our Clients' text font */
+}
+
+/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
+.client-icon {
+    width: 100%;
+}
+
+/* now we create names for the grid areas for specific elements */
+#banner {
+    /* TODO: give the grid-area a name */
+}
+
+#teamMemberCard1 {
+    /* TODO: give the grid-area a name */
+}
+
+#teamMemberCard2 {
+    /* TODO: give the grid-area a name */
+}
+
+#teamMemberCard3 {
+    /* TODO: give the grid-area a name */
+}
+
+#ourClientsTitle {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon1 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon2 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon3 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon4 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon5 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon6 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon7 {
+    /* TODO: give the grid-area a name */
+}
+
+#clientIcon8 {
+    /* TODO: give the grid-area a name */
+}
+
+/* Use a flexible layout grid */
+.main-container {
+    display: grid;
+    column-gap: 1em;
+}
+  
+/* 
+Responsive Layout breakpoints. We start 'mobile-first' i.e. we define how the layout should look
+for the smallest screen sizes. In this case we want a single column that spans the main container.
+Because this CSS definition comes first, it will apply by default. Then we override it below with 
+media queries for progressively bigger screen widths
+*/
+.main-container {
+    /* TODO: setup the grid-template for mobile phone layout */
+}
+
+@media (min-width: 50em) {
+    .main-container {
+            /* TODO: setup the grid-template for tablet layout */
+    }
+}
+
+@media (min-width: 75em) {
+    .main-container {
+        /* TODO: setup the grid-template for desktop layout */
+    }
+}
