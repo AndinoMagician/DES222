@@ -136,7 +136,15 @@ media queries for progressively bigger screen widths
 }
 
 @media (min-width: 75em) {
-    .main-container {
-        /* TODO: setup the grid-template for desktop layout */
-    }
+   .main-container {
+   grid-template:
+     "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
+     " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
+     "tm1 tm1 tm1 tm1 tm2 tm2 tm2 tm2 tm3 tm3 tm3 tm3" minmax(32em, auto)
+     " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+     "oct oct oct oct oct oct oct oct oct oct oct oct" minmax(2em, auto)
+     " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
+     "ci1 ci1 ci1 ci2 ci2 ci2 ci3 ci3 ci3 ci4 ci4 ci4" minmax(8em, auto)
+     " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
+     "ci5 ci5 ci5 ci6 ci6 ci6 ci7 ci7 ci7 ci8 ci8 ci8" minmax(8em, auto)
 }
