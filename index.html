@@ -2,43 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid Layout Example</title>
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Global counter -->
   <div class="hover-counter" id="hoverCounter">Emissions - 0</div>
 
-<div class="main-container">
+  <div class="main-container">
 
-  <!-- Banner -->
-  <div class="banner">
-    <img class="banner-image" src="./images/BannerImage.jpg" alt="Banner">
-    <div class="banner-text">
-      <h1>Smart Cities</h1>
-      <p>Surveillance Overreach</p>
+    <!-- Banner -->
+    <div class="banner ban">
+      <img class="banner-image" src="./images/BannerImage.jpg" alt="Banner">
+      <div class="banner-text">
+        <h1>Smart Cities</h1>
+        <p>Surveillance Overreach</p>
+      </div>
     </div>
+
+    <!-- Cards -->
+    <div class="card toa" data-emissions="220" data-activated="false">
+      <img src="./images/Toaster.jpg" alt="Toaster">
+      <div class="card-blurb">TOAST = EMISSIONS 220</div>
+    </div>
+
+    <div class="card tr1" data-emissions="4550" data-activated="false">
+      <img src="./images/Traffic1.jpg" alt="Traffic">
+      <div class="card-blurb">33 KILOMETER DRIVE = EMISSIONS 4550</div>
+    </div>
+
+    <div class="card fru" data-emissions="200" data-activated="false">
+      <img src="./images/Fruit_Shop.jpg" alt="Fruit Shop">
+      <div class="card-blurb">EATING HEALTHY PENALTY = EMISSIONS 200</div>
+    </div>
+
+    <div class="card wal" data-emissions="0" data-activated="false">
+      <img src="./images/Walking_City.jpg" alt="Walking City">
+      <div class="card-blurb">WALKING = EMISSIONS 0</div>
+    </div>
+
+    <div class="card mcd" data-emissions="-300" data-activated="false">
+        <img src="./images/Mcdonalds.jpg" alt="Mcdonalds">
+        <div class="card-blurb">UNHEALTHY EATING BONUS = EMISSIONS -300</div>
+    </div>
+
+    <div class="card tr2" data-emissions="2350" data-activated="false">
+      <img src="./images/Traffic1.jpg" alt="Traffic">
+      <div class="card-blurb">33 KILOMETER DRIVE = EMISSIONS 2350</div>
+    </div>
+
+     <div class="card sur" data-emissions="0" data-activated="false">
+      <img src="./images/Surveillance.jpg" alt="Surveillance">
+      <div class="card-blurb">OVER THE DAILY LIMIT</div>
+    </div>
+
+
+
   </div>
 
-  <!-- Cards Row -->
-  <div class="card toaster-card" data-emissions="220">
-    <img src="./images/Toaster.jpg" alt="Toaster">
-    <div class="card-blurb">EMISSIONS 220</div>
-  </div>
-
-  <div class="card traffic1-card" data-emissions="4550">
-    <img src="./images/Traffic1.jpg" alt="Traffic">
-    <div class="card-blurb">13 KILOMETER DRIVE = EMISSIONS 4550</div>
-  </div>
-
-  <div class="card fruit-card" data-emissions="200">
-    <img src="./images/Fruit_Shop.jpg" alt="Fruit Shop">
-    <div class="card-blurb">EATING HEALTHY PENALTY = EMISSIONS 200</div>
-  </div>
-
-</div>
-<script src="counter.js"></script>
+  <script src="counter.js"></script>
 </body>
 </html>
-

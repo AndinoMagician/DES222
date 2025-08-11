@@ -1,36 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let totalEmissions = 0;
-    const counterElement = document.getElementById('hoverCounter');
-    const cards = document.querySelectorAll('.card');
+let totalEmissions = 0;
+const counterDisplay = document.getElementById("hoverCounter");
 
-    // Function to animate the counter change
-    function animateCounter(from, to) {
-        const duration = 500; // ms
-        const startTime = performance.now();
+// Initialize all cards as not activated
+document.querySelectorAll(".card").forEach(card => {
+  card.dataset.activated = "false";
 
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const value = Math.floor(from + (to - from) * progress);
-            counterElement.textContent = `Emissions - ${value}`;
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
-        }
-        requestAnimationFrame(update);
+  // Hover for desktop
+  card.addEventListener("mouseenter", () => {
+    if (window.innerWidth > 1024 && card.dataset.activated === "false") {
+      addEmissions(card);
+    }
+  });
+
+  // Click/tap for mobile/tablet
+  card.addEventListener("click", () => {
+    if (window.innerWidth <= 1024 && card.dataset.activated === "false") {
+      addEmissions(card);
+    }
+  });
+});
+
+function addEmissions(card) {
+  const emissions = parseInt(card.dataset.emissions, 10) || 0;
+  totalEmissions += emissions;
+  animateCounter(totalEmissions);
+  card.dataset.activated = "true"; // Mark as used
+}
+
+function animateCounter(target) {
+  let current = parseInt(counterDisplay.textContent.replace(/\D/g, ""), 10) || 0;
+  const increment = target > current ? 10 : -10; // Faster increments
+
+  const step = () => {
+    current += increment;
+
+    // Avoid overshooting
+    if ((increment > 0 && current > target) || (increment < 0 && current < target)) {
+      current = target;
     }
 
-    cards.forEach(card => {
-        let hoveredOnce = false;
-        const emissionsValue = parseInt(card.dataset.emissions, 10) || 0;
+    counterDisplay.textContent = `Emissions - ${current}`;
 
-        card.addEventListener('mouseenter', () => {
-            if (!hoveredOnce) {
-                const previousTotal = totalEmissions;
-                totalEmissions += emissionsValue;
-                animateCounter(previousTotal, totalEmissions);
-                hoveredOnce = true;
-            }
-        });
-    });
-});
+    if (current !== target) {
+      requestAnimationFrame(step);
+    }
+  };
+
+  requestAnimationFrame(step);
+}
