@@ -4,8 +4,6 @@ body {
   cursor: url('./images/custom-cursor.png') 16 16, auto;
 }
 
-
-
 /* Banner Styling */
 .banner {
   position: relative;
@@ -30,12 +28,12 @@ body {
 
 .banner-text h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .banner-text p {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* Card Styling */
@@ -53,7 +51,7 @@ body {
 
 .card-blurb {
   position: absolute;
-  bottom: 20%; /* Raised higher */
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0,0,0,0.6);
@@ -81,6 +79,26 @@ body {
   font-family: 'Orbitron', sans-serif;
 }
 
+/* Full-page siren flashing background */
+#siren-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* so clicks pass through */
+  z-index: -1000; /* behind everything */
+
+  animation: sirenFlashAlt 2s infinite;
+}
+
+/* Red/blue alternating siren effect */
+@keyframes sirenFlashAlt {
+  0%   { background-color: rgba(255, 0, 0, 0.3); }
+  50%  { background-color: rgba(0, 0, 255, 0.3); }
+  100% { background-color: rgba(255, 0, 0, 0.3); }
+}
+
 /* Grid area names */
 .ban { grid-area: ban; }
 .toa { grid-area: toa; }
@@ -90,6 +108,8 @@ body {
 .mcd { grid-area: mcd; }
 .tr2 { grid-area: tr2; }
 .sur { grid-area: sur; }
+.arr { grid-area: arr; }
+.pri { grid-area: pri; }
 
 .main-container {
   display: grid;
@@ -100,9 +120,10 @@ body {
     "toa toa toa toa tr1 tr1 tr1 tr1 fru fru fru fru"
     "wal wal wal wal wal wal wal wal wal wal wal wal"
     "mcd mcd mcd mcd mcd mcd tr2 tr2 tr2 tr2 tr2 tr2"
-    "sur sur sur sur sur sur sur sur sur sur sur sur";
-  gap: 10px;
-  padding: 10px;
+    "sur sur sur sur sur sur sur sur sur sur sur sur"
+    "arr arr arr arr arr arr pri pri pri pri pri pri";
+  gap: 16px;
+  padding: 16px;
 }
 
 
@@ -116,7 +137,8 @@ body {
       "fru fru fru fru fru fru fru fru"
       "wal wal wal wal wal wal wal wal"
       "mcd mcd mcd mcd tr2 tr2 tr2 tr2"
-      "sur sur sur sur sur sur sur sur";
+      "sur sur sur sur sur sur sur sur"
+      "arr arr arr arr pri pri pri pri";
   }
 }
 
@@ -131,6 +153,8 @@ body {
       "wal wal wal wal"
       "mcd mcd mcd mcd"
       "tr2 tr2 tr2 tr2"
-      "sur sur sur sur";
+      "sur sur sur sur"
+      "arr arr arr arr"
+      "pri pri pri pri";
   }
 }
