@@ -39,7 +39,7 @@ function animateCounter(target) {
       current = target;
     }
 
-    counterDisplay.textContent = `Emissions - ${current}`;
+    counterDisplay.textContent = `EMISSIONS = ${current}`;
 
     if (current !== target) {
       requestAnimationFrame(step);

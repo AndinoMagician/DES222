@@ -37,13 +37,14 @@ body {
 }
 @media (max-width: 768px) {
   .banner-text h1 {
-    font-size: 2rem; /* smaller on mobile/tablet */
+    font-size: 2rem;
   }
 
   .banner-text p {
     font-size: 1rem;
   }
 }
+
 
 /* Card Styling */
 .card {
@@ -75,6 +76,17 @@ body {
 .card:hover .card-blurb {
   opacity: 1;
 }
+.reference-blurb {
+  text-align: center;         
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre-line;      
+}
+
+
 
 
 .hover-counter {
@@ -121,6 +133,7 @@ body {
 .sur { grid-area: sur; }
 .arr { grid-area: arr; }
 .pri { grid-area: pri; }
+.ref { grid-area: ref; }
 
 .main-container {
   display: grid;
@@ -132,7 +145,8 @@ body {
     "wal wal wal wal wal wal wal wal wal wal wal wal"
     "mcd mcd mcd mcd mcd mcd tr2 tr2 tr2 tr2 tr2 tr2"
     "sur sur sur sur sur sur sur sur sur sur sur sur"
-    "arr arr arr arr arr arr pri pri pri pri pri pri";
+    "arr arr arr arr arr arr pri pri pri pri pri pri"
+    "ref ref ref ref ref ref ref ref ref ref ref ref";
   gap: 16px;
   padding: 16px;
 }
@@ -149,7 +163,8 @@ body {
       "wal wal wal wal wal wal wal wal"
       "mcd mcd mcd mcd tr2 tr2 tr2 tr2"
       "sur sur sur sur sur sur sur sur"
-      "arr arr arr arr pri pri pri pri";
+      "arr arr arr arr pri pri pri pri"
+      "ref ref ref ref ref ref ref ref";
   }
 }
 
@@ -166,6 +181,7 @@ body {
       "tr2 tr2 tr2 tr2"
       "sur sur sur sur"
       "arr arr arr arr"
-      "pri pri pri pri";
+      "pri pri pri pri"
+      "ref ref ref ref";
   }
 }
