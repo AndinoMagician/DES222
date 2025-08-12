@@ -81,11 +81,23 @@ body {
   background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 16px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
   white-space: pre-line;      
 }
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .reference-blurb {
+    font-size: .8rem;
+  }
+}
 
+/* Mobile and below */
+@media (max-width: 600px) {
+  .reference-blurb {
+    font-size: 0.4rem;
+  }
+}
 
 
 
